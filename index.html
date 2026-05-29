@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niranya N. — Growth & Commercial Strategy | SEA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #12324A;
+  --navy-light: #1a4060;
+  --gold: #42b5ff;
+  --gold-light: #7ccfff;
+  --cream: #FFF7ED;
+  --cream-dark: #ffe8d0;
+  --white: #ffffff;
+  --gray: #8a8f9e;
+  --text: #12324A;
+  --accent: #F97316;
+  --mint: #E6F4F1;
+  --mango: #F97316;
+  --baby-blue: #42b5ff;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--mint);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(18,50,74,0.97);
+  backdrop-filter: blur(12px);
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+  border-bottom: 1px solid rgba(249,115,22,0.2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: #FFF7ED;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0;
+  background: rgba(18,50,74,0.98);
+  backdrop-filter: blur(12px);
+  padding: 20px 24px;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 99;
+  border-bottom: 1px solid rgba(249,115,22,0.2);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: #F97316; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFF7ED;
+  letter-spacing: 0.05em;
+}
+.nav-links { display: flex; gap: 36px; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #F97316; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: #12324A;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(249,115,22,0.15);
+  border: 1px solid rgba(249,115,22,0.4);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #F97316;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  width: fit-content;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #F97316;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 900;
+  color: #FFF7ED;
+  line-height: 1.0;
+  margin-bottom: 24px;
+}
+
+.hero h1 span { color: #F97316; }
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,247,237,0.65);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+  padding: 28px;
+  background: rgba(255,247,237,0.06);
+  border: 1px solid rgba(249,115,22,0.25);
+  border-radius: 16px;
+}
+
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 28px;
+  font-weight: 500;
+  color: #F97316;
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 11px;
+  color: rgba(255,247,237,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  background: #F97316;
+  color: #FFF7ED;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover { background: #fb923c; transform: translateY(-2px); }
+
+.btn-outline {
+  border: 1px solid rgba(255,247,237,0.35);
+  color: #FFF7ED;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: #F97316; color: #F97316; }
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 80px 80px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-card {
+  background: rgba(255,247,237,0.06);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%);
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #F97316;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(66,181,255,0.2);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.highlight-item:last-child { border-bottom: none; }
+
+.highlight-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(249,115,22,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.highlight-text {}
+.highlight-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--baby-blue);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.highlight-desc {
+  font-size: 13px;
+  color: rgba(255,247,237,0.5);
+  line-height: 1.5;
+}
+
+/* BG DECORATION */
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(66,181,255,0.06) 0%, transparent 70%);
+}
+.circle-1 { width: 600px; height: 600px; top: -200px; right: -100px; }
+.circle-2 { width: 400px; height: 400px; bottom: -150px; left: 200px; }
+
+/* SECTIONS */
+section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.section-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--baby-blue);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.15;
+}
+.section-title span { color: var(--baby-blue); }
+
+/* ABOUT */
+#about { background: var(--white); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.pill {
+  background: var(--mint);
+  border: 1px solid var(--cream-dark);
+  border-radius: 100px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: var(--mint);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #d4ebe6;
+}
+.info-card-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.info-card-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.info-card-sub {
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+/* METRICS */
+#metrics {
+  background: linear-gradient(135deg, #12324A 0%, #0d2535 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.metric-card {
+  background: rgba(15,30,60,0.8);
+  padding: 48px 40px;
+  text-align: center;
+  position: relative;
+  transition: background 0.3s;
+}
+.metric-card:hover { background: rgba(66,181,255,0.08); }
+
+.metric-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  display: block;
+}
+.metric-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--baby-blue);
+  line-height: 1;
+  margin-bottom: 12px;
+  display: block;
+}
+.metric-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+.metric-source {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 8px;
+  font-family: 'DM Mono', monospace;
+}
+
+/* EXPERIENCE */
+#experience { background: var(--mint); }
+
+.exp-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 16px; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--baby-blue), transparent);
+}
+
+.exp-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -47px; top: 16px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--baby-blue);
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.exp-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.exp-company {
+  font-size: 14px;
+  color: var(--baby-blue);
+  font-weight: 600;
+  margin-top: 4px;
+}
+.exp-date {
+  background: var(--navy);
+  color: var(--baby-blue);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+  white-space: nowrap;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.exp-tag {
+  background: rgba(66,181,255,0.12);
+  border: 1px solid rgba(66,181,255,0.3);
+  color: var(--navy);
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.exp-highlights {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #d4ebe6;
+}
+.exp-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream-dark);
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+.exp-highlight-item:last-child { border-bottom: none; padding-bottom: 0; }
+.exp-highlight-item::before {
+  content: '→';
+  color: var(--baby-blue);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.exp-achievement {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+.exp-ach-item {
+  background: #12324A;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.exp-ach-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 20px;
+  color: var(--baby-blue);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+.exp-ach-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* SKILLS */
+#skills { background: var(--white); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.skill-card {
+  background: var(--mint);
+  border: 1px solid var(--cream-dark);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+.skill-card:hover {
+  border-color: var(--baby-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(66,181,255,0.1);
+}
+
+.skill-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+.skill-category {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--baby-blue);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.skill-list li {
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skill-list li::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--baby-blue);
+  flex-shrink: 0;
+}
+.skill-list li.learning {
+  color: #999;
+  font-style: italic;
+}
+
+/* TOOLS */
+#markets { background: var(--mint); }
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.tool-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+.tool-card:hover {
+  border-color: var(--baby-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(66,181,255,0.08);
+}
+.tool-card-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+.tool-card-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mango);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cream-dark);
+}
+.tool-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.tool-list li {
+  font-size: 13px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+.tool-list li::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--baby-blue);
+  flex-shrink: 0;
+}
+.tool-list li.learning {
+  color: #999;
+  font-style: italic;
+}
+.tool-list li.learning::before {
+  background: #ccc;
+}
+
+/* CONTACT */
+#contact {
+  background: linear-gradient(135deg, #12324A 0%, #0d2535 100%);
+  text-align: center;
+}
+
+#contact .section-title { color: var(--white); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.contact-item {
+  background: rgba(255,247,237,0.06);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 16px;
+  padding: 28px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.contact-item:hover {
+  background: rgba(66,181,255,0.1);
+  border-color: var(--baby-blue);
+  transform: translateY(-4px);
+}
+.contact-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+.contact-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.contact-value {
+  font-size: 14px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.footer-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(66,181,255,0.15);
+}
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  /* NAV */
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+
+  /* HERO */
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: 56px; }
+  .hero-right { display: none; }
+  .hero-left { padding: 72px 24px 40px; }
+  .hero h1 { font-size: 42px; }
+  .hero-sub { font-size: 15px; max-width: 100%; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px 16px; }
+  .stat-num { font-size: 22px; }
+  .stat-label { font-size: 10px; }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-outline { text-align: center; padding: 14px 20px; }
+
+  /* CONTAINER */
+  .container { padding: 0 20px; }
+
+  /* SECTIONS */
+  section { padding: 64px 0; }
+  .section-title { font-size: 28px; }
+
+  /* ABOUT */
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-text h3 { font-size: 22px; }
+  .about-info { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .info-card { padding: 18px; }
+  .info-card-value { font-size: 16px; }
+
+  /* METRICS */
+  .metrics-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .metric-card { padding: 28px 20px; }
+  .metric-number { font-size: 36px; }
+  .metric-label { font-size: 12px; }
+
+  /* EXPERIENCE */
+  .exp-timeline { padding-left: 24px; }
+  .exp-item::before { left: -31px; width: 12px; height: 12px; }
+  .exp-header { flex-direction: column; gap: 8px; }
+  .exp-role { font-size: 18px; }
+  .exp-achievement { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .exp-ach-num { font-size: 16px; }
+  .exp-highlights { padding: 20px; }
+  .exp-highlight-item { font-size: 13px; }
+
+  /* TOOLS */
+  .tools-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tool-card { padding: 20px 16px; }
+  .tool-card-icon { font-size: 22px; margin-bottom: 10px; }
+  .tool-list li { font-size: 12px; }
+
+  /* CONTACT */
+  .contact-grid { grid-template-columns: 1fr; max-width: 100%; gap: 12px; }
+  .contact-item { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  /* HERO */
+  .hero h1 { font-size: 34px; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 16px 12px; }
+  .stat-num { font-size: 18px; }
+  .stat-label { font-size: 9px; letter-spacing: 0.04em; }
+  .hero-tag { font-size: 10px; padding: 5px 12px; }
+
+  /* ABOUT */
+  .about-info { grid-template-columns: 1fr; }
+  .about-pills { gap: 8px; }
+  .pill { font-size: 12px; padding: 6px 14px; }
+
+  /* METRICS */
+  .metrics-grid { grid-template-columns: 1fr 1fr; }
+  .metric-number { font-size: 30px; }
+
+  /* EXPERIENCE */
+  .exp-achievement { grid-template-columns: repeat(3, 1fr); }
+  .exp-tags { gap: 6px; }
+  .exp-tag { font-size: 11px; padding: 3px 10px; }
+
+  /* TOOLS */
+  .tools-grid { grid-template-columns: 1fr; }
+
+  /* CONTACT */
+  .footer-note { font-size: 11px; margin-top: 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Niranya N.</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#metrics">Results</a>
+    <a href="#experience">Experience</a>
+    <a href="#markets">Tools</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#metrics" onclick="closeMenu()">Results</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#markets" onclick="closeMenu()">Tools</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circle circle-1"></div>
+  <div class="hero-bg-circle circle-2"></div>
+
+  <div class="hero-left">
+    <div class="hero-tag">Regional Growth & Marketing Manager | SEA</div>
+    <h1>Niranya <span>N.</span></h1>
+    <p class="hero-sub">With 8+ years driving e-commerce and commercial growth across Southeast Asia, turning budget into profitable, measurable revenue.</p>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">$3M</span>
+        <span class="stat-label">Self-Generated Budget *</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10x</span>
+        <span class="stat-label">GMV Growth <br>(TikTok Shop)</br></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5</span>
+        <span class="stat-label">SEA Markets</span>
+      </div>
+    </div>
+    <p style="font-size:11px; color:rgba(255,247,237,0.4); margin-top:-36px; margin-bottom:48px;">* Self-generated annual budget at Shopee Thailand, built through a sponsorship model and allocated by ROI. Now directing multi-market growth budget across 5 SEA markets.</p>
+
+    <div class="hero-ctas">
+      <a href="#experience" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="card-title"><b>Key Achievements</b></div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">📈</div>
+        <div class="highlight-text">
+          <div class="highlight-num">10x GMV</div>
+          <div class="highlight-desc">Scaled ELLE Fashion TikTok Shop from 20K → 200K THB/month within 1 year</div>
+        </div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🚀</div>
+        <div class="highlight-text">
+          <div class="highlight-num">2x Revenue Baseline</div>
+          <div class="highlight-desc">ELLE Decor x SB Design Square: Doubled GMV after Sep 2024 campaign, <br>sustained ever since</br></div>
+        </div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🎯</div>
+        <div class="highlight-text">
+          <div class="highlight-num">9% → 15% Feature Engagements</div>
+          <div class="highlight-desc">Drove Shopee core feature engagement rate in 6 months through game mechanic & optimisation strategy</div>
+        </div>
+      </div>
+
+     <div class="highlight-item">
+        <div class="highlight-icon">🌏</div>
+        <div class="highlight-text">
+          <div class="highlight-num">5 Markets, Full ownership</div>
+          <div class="highlight-desc">Campaign management across SEA — strategy, execution oversight, and budget across 5 markets simultaneously.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <h3>Hi, I'm Niranya 👋</h3>
+        <p>I'm a regional growth & commercial professional with 8+ years across Southeast Asia — from growing sellers on Shopee Thailand to leading 5-market campaigns for the ELLE brand. My background spans e-commerce, paid channels, and offline activations, giving me a full-funnel, commercial perspective.</p>
+        <p>What drives me is seeing growth reflected in real numbers, not vanity metrics, but real revenue. I build systems, coach teams and partners, and make budget decisions based on data, not instinct alone.</p>
+        <p>I've managed budgets, built channels from zero, and turned hesitant licensees into confident e-commerce operators. Now I'm looking for my next chapter — owning commercial growth and P&L for a brand portfolio, and turning data into profitable revenue at scale.</p>
+
+        <div class="about-pills">
+          <span class="pill">Data-Driven</span>
+          <span class="pill">E-commerce Growth</span>
+          <span class="pill">Multi-Market</span>
+          <span class="pill">Budget Ownership</span>
+          <span class="pill">Team Leadership</span>
+          <span class="pill">Revenue-Focused</span>
+        </div>
+      </div>
+
+      <div class="about-info fade-up">
+        <div class="info-card">
+          <div class="info-card-title">Current Role</div>
+          <div class="info-card-value">SEA Regional Marketing Manager</div>
+          <div class="info-card-sub">Lagardère Active Enterprise — ELLE Brand</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Location</div>
+          <div class="info-card-value">Bangkok, Thailand</div>
+          <div class="info-card-sub">Open to Hybrid / Remote roles</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Experience</div>
+          <div class="info-card-value">8+ Years</div>
+          <div class="info-card-sub">Marketing & E-commerce across SEA</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Education</div>
+          <div class="info-card-value">Dual MBA & MSc</div>
+          <div class="info-card-sub">Glion Institute · Grenoble Ecole de Management</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Certifications</div>
+          <div class="info-card-value" style="font-size:16px;">Google Ads Search</div>
+          <div class="info-card-sub">Google Skillshop · May 2026</div>
+          <div class="info-card-value" style="font-size:16px; margin-top:10px;">Google Data Analytics</div>
+          <div class="info-card-sub">Google / Coursera · 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="color: var(--gold-light);">Numbers That Matter</div>
+      <h2 class="section-title" style="color: var(--white);">Results That <span>Tell the Story</span></h2>
+    </div>
+
+    <div class="metrics-grid fade-up">
+      <div class="metric-card">
+        <span class="metric-icon">💰</span>
+        <span class="metric-number">$3M</span>
+        <div class="metric-label">Self-Generated Annual Budget<br>built through sponsorship revenue model</div>
+        <div class="metric-source">Shopee Thailand</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon">📈</span>
+        <span class="metric-number">10x</span>
+        <div class="metric-label">GMV Growth on TikTok Shop<br>20K → 200K THB/month in 1 year</div>
+        <div class="metric-source">Lagardère — ELLE Fashion TH</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon">🚀</span>
+        <span class="metric-number">2x</span>
+        <div class="metric-label">Revenue Baseline Doubled<br>sustained from Sep 2024 onwards</div>
+        <div class="metric-source">ELLE Decor x SB Design Square</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon">🎯</span>
+        <span class="metric-number">+6pp</span>
+        <div class="metric-label">Feature Engagement Growth<br>9% → 15% in 6 months</div>
+        <div class="metric-source">Shopee Games Feature</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon">🌏</span>
+        <span class="metric-number">5</span>
+        <div class="metric-label">SEA Markets Managed<br>TH · MY · PH · VN · ID</div>
+        <div class="metric-source">Lagardère Active</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon">👥</span>
+        <span class="metric-number">12</span>
+        <div class="metric-label">Max Team Size Led<br>remote & hybrid environments</div>
+        <div class="metric-source">Shopee Thailand</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Career Journey</div>
+      <h2 class="section-title">8 Years of <span>E-commerce Growth</span></h2>
+    </div>
+
+    <div class="exp-timeline">
+
+      <!-- Lagardere -->
+      <div class="exp-item fade-up">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">S.E.A. Regional Marketing Manager</div>
+            <div class="exp-company">Lagardère Active Enterprise — ELLE Brand · Bangkok</div>
+          </div>
+          <div class="exp-date">2024 — Current</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">E-commerce Growth</span>
+          <span class="exp-tag">TikTok Shop</span>
+          <span class="exp-tag">Shopee</span>
+          <span class="exp-tag">Meta Ads Strategy</span>
+          <span class="exp-tag">KOL Strategy</span>
+          <span class="exp-tag">5 Markets</span>
+        </div>
+        <div class="exp-highlights">
+          <div class="exp-highlight-item">Initiated and led ELLE Decor Brand Day on Shopee Thailand (Sep 2024): Centralising 3 licensees into one co-branded microsite. SB Design Square doubled their monthly revenue baseline, sustained through 2025.</div>
+          <div class="exp-highlight-item">Scaled ELLE Fashion licensee TikTok Shop GMV 10x (20,000 → 200,000 THB/month) within one year by connecting licensee with TikTok team and building out Livestream and Affiliate capabilities.</div>
+          <div class="exp-highlight-item">Oversaw Meta Ads performance across TH, MY, and PH markets via agency: Directing creative strategy, audience targeting, and budget decisions based on data.</div>
+          <div class="exp-highlight-item">Managed regional marketing budget across 5 SEA markets (TH, MY, PH, VN, ID), directing spend across e-commerce campaigns, KOL seeding, and platform activations.</div>
+          <div class="exp-highlight-item">Launched KOL seeding programs in Thailand and Malaysia, including a macro KOL campaign across countries for ELLE's 80th anniversary. <br>In PH, collaborate with local media for Digital campaign with product integration.</br></div>
+        </div>
+        <div class="exp-achievement">
+          <div class="exp-ach-item">
+            <span class="exp-ach-num">10x</span>
+            <span class="exp-ach-label">TikTok GMV Growth</span>
+          </div>
+          <div class="exp-ach-item">
+            <span class="exp-ach-num">2x</span>
+            <span class="exp-ach-label">Revenue Baseline</span>
+          </div>
+          <div class="exp-ach-item">
+            <span class="exp-ach-num">5</span>
+            <span class="exp-ach-label">SEA Markets</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shopee Marketing -->
+      <div class="exp-item fade-up">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Lead Marketing & Campaign Management</div>
+            <div class="exp-company">Shopee Thailand · Bangkok</div>
+          </div>
+          <div class="exp-date">2021 — 2024</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Sponsorship Revenue</span>
+          <span class="exp-tag">~$10K/day Generated</span>
+          <span class="exp-tag">Campaign Optimisation</span>
+          <span class="exp-tag">Commercial Growth</span>
+          <span class="exp-tag">Team of 12</span>
+        </div>
+        <div class="exp-highlights">
+          <div class="exp-highlight-item">Built and operated a self-funded sponsorship model — selling platform game assets (ad placements and in-game prizes) to external brands and internal teams, securing ~$10K USD/day to fund performance campaigns. Total self-generated budget: ~$3M USD annually.</div>
+          <div class="exp-highlight-item">Allocated and optimised the ~$3M budget as growth investments across 6 Shopee game features, prioritising weekly by ROI, active user rate, ARPU, and traffic. Drove core feature engagement rate from 9% → 15% within 6 months.</div>
+          <div class="exp-highlight-item">Redesigned game mechanics and built multi-touchpoint campaign integration across the Shopee app to increase session depth and retention.</div>
+          <div class="exp-highlight-item">Ran weekly performance reviews with team of 8–12, translating data into immediate optimisation decisions on budget allocation, mechanic design, and campaign timing.</div>
+        </div>
+        <div class="exp-achievement">
+          <div class="exp-ach-item">
+            <span class="exp-ach-num">$3M</span>
+            <span class="exp-ach-label">Annual Budget</span>
+          </div>
+          <div class="exp-ach-item">
+            <span class="exp-ach-num">9→15%</span>
+            <span class="exp-ach-label">Engagement Rate</span>
+          </div>
+          <div class="exp-ach-item">
+            <span class="exp-ach-num">6mo</span>
+            <span class="exp-ach-label">To Hit Target</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shopee BD -->
+      <div class="exp-item fade-up">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Associate Seller Management</div>
+            <div class="exp-company">Shopee Thailand · Bangkok</div>
+          </div>
+          <div class="exp-date">2020 — 2021</div>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Business Development</span>
+          <span class="exp-tag">Seller Growth</span>
+          <span class="exp-tag">Account Management</span>
+        </div>
+        <div class="exp-highlights">
+          <div class="exp-highlight-item">Managed seller accounts across multiple categories (Fashion, Food, Beauty, Home & Living), developing prioritisation frameworks for 20–30 accounts per month.</div>
+          <div class="exp-highlight-item">Transitioned social commerce sellers (Instagram, Facebook Live) onto Shopee platform with strong conversion rates into active, growing sellers.</div>
+          <div class="exp-highlight-item">Pitched platform features and programs including Rebate, Vouchers, and new product features to drive seller adoption and GMV growth.</div>
+        </div>
+      </div>
+
+      <!-- Earlier Career -->
+      <div class="exp-item fade-up">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role" style="font-size:16px; color: var(--gray);">Earlier Career — Marketing & Operations</div>
+            <div class="exp-company">Logistics Industry · Thailand</div>
+          </div>
+          <div class="exp-date">2013 — 2018</div>
+        </div>
+        <div class="exp-highlights">
+          <div class="exp-highlight-item" style="color: var(--gray); font-size:13px;">Roles in marketing and operations within the logistics sector, building foundational commercial and project management skills prior to MBA.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TOOLS -->
+<section id="markets" style="padding-top: 48px;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Technical Toolkit</div>
+      <h2 class="section-title">Tools & Channels <span>I've Operated</span></h2>
+    </div>
+
+    <div class="tools-grid fade-up">
+      <div class="tool-card">
+        <span class="tool-card-icon">📣</span>
+        <div class="tool-card-category">Paid Media</div>
+        <ul class="tool-list">
+          <li>Meta Ads (Strategy & Direction)</li>
+          <li>Google Ads Search <span style="color: var(--accent); font-size:11px; font-weight:600;">✓ Certified 2026</span></li>
+          <li>TikTok Ads</li>
+          <li>Shopee Ads</li>
+          <li>Lazada Ads</li>
+          <li class="learning">GA4 (Familiarising)</li>
+        </ul>
+      </div>
+
+      <div class="tool-card">
+        <span class="tool-card-icon">🛒</span>
+        <div class="tool-card-category">E-commerce & Growth</div>
+        <ul class="tool-list">
+          <li>Shopee</li>
+          <li>TikTok Shop</li>
+          <li>Lazada</li>
+          <li>Xiao Hong Shu</li>
+          <li>Livestream Commerce</li>
+          <li>Affiliate Programs</li>
+          <li>Mega Sale Events (11.11, BFCM)</li>
+        </ul>
+      </div>
+
+      <div class="tool-card">
+        <span class="tool-card-icon">📊</span>
+        <div class="tool-card-category">Analytics & Reporting</div>
+        <ul class="tool-list">
+          <li>Power BI</li>
+          <li>Excel / Google Sheets</li>
+          <li>Salesforce</li>
+          <li>MoM / WoW Performance Analysis</li>
+          <li>Budget Run Rate Tracking</li>
+          <li>KPI Dashboards</li>
+        </ul>
+      </div>
+
+      <div class="tool-card">
+        <span class="tool-card-icon">🎯</span>
+        <div class="tool-card-category">Campaign & Brand</div>
+        <ul class="tool-list">
+          <li>KOL Seeding & Creative Briefs</li>
+          <li>Offline Pop-up Events</li>
+          <li>In-store Activations</li>
+          <li>Sponsorship Packages</li>
+          <li>Cross-market Campaign Strategy</li>
+          <li>Team Leadership (up to 12)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="color: var(--gold-light);">Get In Touch</div>
+      <h2 class="section-title">Let's <span style="color: var(--baby-blue);">Work Together</span></h2>
+      <p style="color: rgba(255,255,255,0.5); margin-top: 16px; font-size: 15px;">Open to growth and commercial strategy roles across e-commerce, marketplace, and F&B in SEA.</p>
+    </div>
+
+    <div class="contact-grid fade-up">
+      <a href="tel:+66865695659" class="contact-item">
+        <span class="contact-icon">📞</span>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+66 86 569 5659</div>
+      </a>
+      <a href="mailto:aynarinnn@gmail.com" class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">aynarinnn@gmail.com</div>
+      </a>
+      <a href="#" class="contact-item">
+        <span class="contact-icon">📍</span>
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Bangkok, Thailand</div>
+      </a>
+    </div>
+
+    <p class="footer-note">© 2026 Niranya N. · Growth & Commercial Strategy · SEA</p>
+  </div>
+</section>
+
+<script>
+// Hamburger menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Smooth active nav
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--gold)' : 'rgba(255,255,255,0.7)';
+  });
+});
+
+// Counter animation
+function animateCounter(el, target, suffix = '') {
+  let start = 0;
+  const duration = 1500;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const val = Math.floor(progress * target);
+    el.textContent = val + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+</script>
+</body>
+</html>
